@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import TextEditor from './components/textEditor';
+import StatisticsBoard from './components/statsBoard';
+import StringReplacer from './components/stringReplacer';
 
 function App() {
+  const [text, setText] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="editor-stats-container">
+        <TextEditor text={text} setText={setText} />
+        <StatisticsBoard text={text} />
+      </div>
+      <StringReplacer text={text} setText={setText} />
     </div>
   );
 }
