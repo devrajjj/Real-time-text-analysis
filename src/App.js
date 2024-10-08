@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <div className="editor-stats-container">
-        <TextEditor text={text} setText={setText} />
+       <TextEditor text={text} setText={setText} />
         <StatisticsBoard text={text} />
       </div>
       <StringReplacer text={text} setText={setText} />
@@ -19,3 +19,4 @@ function App() {
 }
 
 export default App;
+
